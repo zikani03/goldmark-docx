@@ -13,7 +13,7 @@ type Config struct {
 
 	Docx    *docx.Docx
 	ImageFS fs.FS
-	Styles  Styles
+	Styles  *Styles
 }
 
 func DefaultConfig() *Config {

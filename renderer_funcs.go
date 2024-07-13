@@ -37,10 +37,18 @@ func (r *nodeRendererFuncs) renderDocument(w *Writer, source []byte, n ast.Node,
 }
 
 func (r *nodeRendererFuncs) renderHeading(w *Writer, source []byte, n ast.Node, entering bool) (ast.WalkStatus, error) {
+
 	return ast.WalkContinue, nil
 }
 
-func (r *nodeRendererFuncs) renderText(w *Writer, source []byte, n ast.Node, entering bool) (ast.WalkStatus, error) {
+func (r *nodeRendererFuncs) renderText(w *Writer, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error) {
+	if !entering {
+		return ast.WalkContinue, nil
+	}
+
+	n := node.(*ast.Text)
+	segment := n.Segment
+	w.Docx.AddParagraph().AddText(string(segment.Value(source)))
 	return ast.WalkContinue, nil
 }
 
