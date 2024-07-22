@@ -51,7 +51,8 @@ func (r *docxRenderer) Render(w io.Writer, source []byte, node ast.Node) error {
 	doc := docx.NewA4()
 	// para1 := doc.AddParagraph()
 	writer := &Writer{
-		Docx: doc,
+		Docx:   doc,
+		states: newStates(),
 	}
 	// para1.AddText(string(source)).AddTab()
 	err := ast.Walk(node, func(n ast.Node, entering bool) (ast.WalkStatus, error) {

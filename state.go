@@ -18,6 +18,12 @@ type states struct {
 	stack []*state
 }
 
+func newStates() *states {
+	return &states{
+		stack: make([]*state, 0),
+	}
+}
+
 func (s *states) push(c *state) {
 	s.stack = append(s.stack, c)
 }

@@ -36,7 +36,14 @@ func (r *nodeRendererFuncs) renderDocument(w *Writer, source []byte, n ast.Node,
 	return ast.WalkContinue, nil
 }
 
-func (r *nodeRendererFuncs) renderHeading(w *Writer, source []byte, n ast.Node, entering bool) (ast.WalkStatus, error) {
+func (r *nodeRendererFuncs) renderHeading(w *Writer, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error) {
+	if !entering {
+		return ast.WalkContinue, nil
+	}
+
+	// n := node.(*ast.Heading)
+	// segment := n.Text
+	// w.Docx.AddParagraph().AddText(string(segment.Value(source))).Size("16")
 
 	return ast.WalkContinue, nil
 }

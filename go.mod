@@ -1,4 +1,4 @@
-module github.com/golang-malawi/goldmark-docx
+module github.com/zikani03/goldmark-docx
 
 go 1.22
 

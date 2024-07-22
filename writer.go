@@ -5,5 +5,6 @@ import (
 )
 
 type Writer struct {
-	Docx *docx.Docx
+	states *states
+	Docx   *docx.Docx
 }

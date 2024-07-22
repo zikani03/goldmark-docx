@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	goldmarkdocx "github.com/golang-malawi/goldmark-docx"
 	"github.com/yuin/goldmark"
+	goldmarkdocx "github.com/zikani03/goldmark-docx"
 )
 
 func main() {
